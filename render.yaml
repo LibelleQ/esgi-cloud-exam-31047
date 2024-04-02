@@ -1,0 +1,20 @@
+services: 
+  -type: web
+  name: Onrender.com
+  runtime: node
+  region: Frankfurt
+  repo: git@github.com:LibelleQ/esgi-cloud-exam-31047
+  branch: main
+  buildCommand: npm install
+  startCommand: npm start
+  autoDeploy: true
+  plan: free
+  envVars:
+    - key: esgi-cloud-exam-31047
+      fromDatabase: 
+        name: esgi2i2
+        property: connectionString
+databases:
+  name: esgi-cloud-exam-31047
+  region: Frankfurt
+  plan: free
